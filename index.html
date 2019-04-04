@@ -10,6 +10,9 @@
     <link media="all" href="main.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin-ext" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+
 </head>
 <body>
  <div id="container">
@@ -17,53 +20,95 @@
         <nav>
             <div class="menu">
                 <ul>
-                    <li>O mnie</li>
-                    <li>Portfolio</li>
-                    <li>Kontakt</li>
+                    <li class="desktopMenu"><a class="mk" id="mk-home" href="#">MK &#183;</a></li>
+                    <li class="desktopMenu"><a id="about-nav" href="#">O mnie</a></li>
+                    <li class="desktopMenu"><a id="projects-nav" href="#">Projekty</a></li>
+                    <li class="desktopMenu"><a id="contact-nav" href="#">Kontakt</a></li>
+                    <li class="dropdownIcon"><a href="#">&#9776;</a></li>
                 </ul>
         </nav>
             </div>
             <div class="short-description">
-                <p class="name">Marta Komar</p>
-                <p class="text">Szukam pracy jako Front-end developer lub pokrewnej - takiej, która pozwoli zająć mi się czymś, co lubiłam zawsze, czyli tworzeniem stron www.</p>
+                <div class="name">Marta Komar</div>
+                <div class="text">Szukam pracy jako Front-end developer lub pokrewnej - takiej, która pozwoli zająć mi się czymś, co lubiłam zawsze, czyli tworzeniem stron www.</div>
             </div>
             <picture><div class="photo">
                     <img src="img/me.jpg">
             </div></picture>
     </header>
     <main>
-        <div class="about">
-            <div class="headline"><hr /><h1>O mnie</h1></div>
+        <div class="about" id="about">
+            <div class="headline" id="1"><hr /><h1>O mnie</h1></div>
             <p>Pierwsze proste serwisy tworzyłam kilkanaście lat temu, jeszcze na studiach. Później zajmowałam się tym w pracy w agencjach reklamowych, ale ostatecznie zdecydowałam się na rozwój w kierunku marketingu. Teraz chcę wrócić do web developmentu.</p>
             <p>Mam <strong>doświadczenie biznesowe w branży IT</strong> oraz umiejętność spojrzenia na tworzone strony i aplikacje <strong>z perspektywy ich użytkowników</strong>. Jestem także bardzo zmotywowana do tego, żeby jak najszybciej uzyskać wysoki poziom znajomości technologii aktualnie niezbędnych w tej pracy. </p>
         </div>
         <div class="skills">
             <div class="headline"><hr /><h1>Umiejętności</h1></div>
-            <div class="all-skills">
+            <p>Kilkanaście lat przerwy w kodowaniu sprawiło, że wielu rzeczy musiałam się uczyć właściwie od nowa. Dotyczy to w szczególności języka JavaScript, który poznawałam zupełnie od podstaw. W tej chwili uczę się przede wszystkim sama. Ma to swoje plusy i ma minusy. Wydaje mi się jednak, że trenuje to samodyscyplinę oraz samodzielność w znajdywaniu rozwiązań.</p>
+            
+            <p>Zdaję sobie sprawę, że poniższe umiejętności, to dopiero set podstawowy i muszę sie jeszcze bardzo wiele nauczyć. Staram się jednak skupiać na maksymalnie dwóch nowych technologiach na raz, żeby poznać je na poziomie pozwalającym przynajmniej na podstawowe poruszanie się w kodzie.</p>
+
+            <div id="skill-icon"><img src="img/skills-icon.png" alt="skills-icon"></div>
+            <div class="skill-table-header"></div>  
+            <div id="all-skills">
              <div class="my-skills">
              <img src="img/html.png" alt="HTML5">
-                <div class="proggres-bar"><span class="fill-html">60%</span></div>
+              <div class="percentage" id="html">60%</div>
+                <div class="proggres-bar">
+                    <span class="fill-html"></span></div>
              <img src="img/css.png" alt="CSS3">
-                <div class="proggres-bar"><span class="fill-css">50%</span></div>
+              <div class="percentage" id="css">50%</div>
+                <div class="proggres-bar">
+                    <span class="fill-css"></span></div>
              </div>
              <div class="my-skills">
              <img src="img/js.png" alt="JavaScript">
-                <div class="proggres-bar"><span class="fill-js">30%</span></div>
+             <div class="percentage" id="js">30%</div>
+                <div class="proggres-bar">
+                    <span class="fill-js"></span></div>
              <img src="img/ps.png" alt="Photoshop">
-                <div class="proggres-bar"><span class="fill-ps">50%</span></div>
+             <div class="percentage" id="Ps">50%</div>
+                <div class="proggres-bar">
+                    <span class="fill-ps"></span></div>
              </div>
             </div>
+            <p>Jestem w tej chwili pod koniec kursu JS na Udemy (37 godzin materiałów, od podstaw w ES6). Co dalej? 
+                <ul>
+                 <li>React</li>
+                 <li>Frameworki</li>
+                 <li>jQuery</li>
+                 <li>&#8734;</li>
+                </ul>
+            </p>
+            <p>Uważam, że żeby umieć poradzić sobie z różnymi wyzwaniami oraz debugowaniem i nie frustrować się za mocno, że coś nie działa, należy przede wszystkim dobrze rozumieć kod, który sie tworzy. Dlatego do nauki podchodzę sumiennie i holistycznie. </p> 
+            <p>Sumiennie oznacza, że codziennie poświęcam przynajmniej kilka godzin na naukę nowych rzeczy oraz pisanie własnego kodu. Holistycznie, ponieważ staram się poznawać poszczególne zagadnienia z wielu różnych źródeł i punktów widzenia. </p>
+            <p>Bardzo przydatne są w tym nagrania prelekcji z różnych konferencji programistycznych dostępnych na YT, które poszerzają moje spojrzenie także o bardziej zaawansowane pojęcia oraz przybliżają do realiów codziennej pracy komercyjnej.</p>
         </div>
-        <div class="portfolio">
-            <div class="headline"><hr /><h1>Portfolio</h1></div>
+        <div class="portfolio"  id="projects">
+            <div class="headline"><hr /><h1>Projekty</h1></div>
+            <p>Oprócz tej strony, pracuję również nad kilkoma innymi. Poniżej krótkie opisy. Jeśli jesteś ciekawy jak wygląda ich kod i co jeszcze dokładnie robię, zapraszam na gitHuba. Codziennie wrzucam tam nowe linijki.</p>
+            <p>Mam w głowie także bardziej zaawansowane pomysły, które będę chciała kiedyś zrealizować i mogę o nich kiedyś opowiedzieć. Już teraz mam niestety świadomość, że żeby je zacząć, będę musiała nauczyć się o wiele więcej.</p>
+            <div class="projects">
+                <img src="img/wr.png" alt="WarsztatyRetoryczne.pl">
+                <img src="img/przeczytana.png" alt="Przeczytana.com">
+                <img src="img/github.png" alt="Github">
+            </div>
+            
         </div>
-        <div class="contact">
-
+        <div class="contact" id="contact">
+            <div class="headline"><hr /><h1>Kontakt</h1></div>
+            <div class="form">
+                <input type="text" class="contact-form" placeholder="Imię i nazwisko">
+                <input type="text" class="contact-form" placeholder="E-mail">
+                <textarea class="contact-form" placeholder="Wiadomość" rows="5"></textarea>
+            </div>
+            <button>Wyślij</button>
         </div>
     </main>
     <footer>
-
+        Copyright © 2019 Marta Komar
     </footer>
  </div>
+ <script src="main.js"></script>
 </body>
 </html>
