@@ -18,6 +18,10 @@ body p {
     text-align: justify;
 }
 
+body a {
+    color: #262d3f;
+}
+
 #container {
     width: 100%;
 }
@@ -36,6 +40,9 @@ body p {
     margin: 0 0 5em 0;
     padding-top: 3em;
     height: 4em;
+}
+
+.menu-scroll {
     box-shadow: 0 2px 4px -2px gray;
 }
 
@@ -64,7 +71,7 @@ body p {
     display: block;
     background-color: #28d8d8;
     color: #ffffff;
-    padding: 1em;
+    padding: 1em 1.4em;
 }
 
 .menu ul {
@@ -86,7 +93,7 @@ body p {
     display: block;
     background-color: #28d8d8;
     color: #ffffff;
-    padding: 1em;
+    padding: 1em 1.4em;
     position: relative;
     top: -1.2em;
 }
@@ -111,7 +118,6 @@ body p {
     text-decoration: none;
     color: #262d3f;
 }
-
 
 .menu ul > li a.mk {
     color: #ff423c;
@@ -157,11 +163,16 @@ body p {
     padding-bottom: 3em;
 }
 
+.skills {
+    width: 90%;
+    margin: 0 auto;
+}
 
 .headline {
+    margin: 0;
     padding-top: 5em;
     padding-bottom: 6em;
-    width: 20em;
+    width: 100%;
     margin: 0 auto;
 }
 .headline h1 {
@@ -171,19 +182,13 @@ body p {
 }
 
 .headline hr {
-    width: 15%;
+    width: 5em;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: .3em;
     height: .3em;
     background-color: #ff423c;
     border: 0;
-}
-
-.skills {
-    width: 90%;
-    margin: 0 auto;
-
 }
 
 .skills img {
@@ -358,8 +363,9 @@ button {
     border: 0;
     padding: 1em;
     border-radius: 2em;
-    width: 10em;
+    width: 15em;
     outline: none;
+    cursor: pointer;
 }
 
 button:hover {
@@ -509,6 +515,7 @@ footer {
         top: 8em;
     }
 
+
     footer {
         position: relative;
         top: 8em;
@@ -552,4 +559,5 @@ footer {
     .projects img {
         width: 25%;
     }
+
 }
