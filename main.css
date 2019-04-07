@@ -36,42 +36,38 @@ body a {
     height: auto;
 }
 
+/*--------------------------menu--------------------------*/
+
 .menu {
-    margin: 0 0 5em 0;
-    padding-top: 3em;
+    margin: 0 0 3em 0;
+    padding: 1em 0 1em 0;
     height: 4em;
 }
 
 .menu-scroll {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
     box-shadow: 0 2px 4px -2px gray;
+    z-index: 400;
+    background-color: #fff;
 }
 
 .mobileMenu {
     position: relative;
-    left: 0;
     width: 100%;
     box-shadow: 0 2px 4px -2px gray;
 }
 
 .mobileMenu ul {
     display: block;
-    padding-top: 1em;
 }
 
 .mobileMenu ul li {
     list-style-type: none;
     text-align: left;
     padding: 1em 0 1em 2em;
-}
-
-.mobileMenu li.dropdownIcon {
-    position: absolute;
-    top: 1.8em;
-    right: 1em;
-    display: block;
-    background-color: #28d8d8;
-    color: #ffffff;
-    padding: 1em 1.4em;
 }
 
 .menu ul {
@@ -95,7 +91,11 @@ body a {
     color: #ffffff;
     padding: 1em 1.4em;
     position: relative;
-    top: -1.2em;
+    margin-bottom: 1em;
+}
+
+.mobileMenu li.dropdownIcon {
+    display: none;
 }
 
 .menu ul li.dropdownIcon a {
@@ -140,9 +140,15 @@ body a {
     color: #28d8d8;
 }
 
+/*------------------------- header --------------------*/
+
 .short-description {
     margin: 3em 1.5em 5em 1.5em;
     line-height: 1.7em;
+}
+
+.short-description-scroll {
+    margin: 8em 1.5em 5em 1.5em;
 }
 
 .name {
@@ -151,6 +157,10 @@ body a {
     font-size: 2em;
     margin-bottom: 2em;
 }
+
+
+
+/* ------------------------ main -------------------------------*/
 
 .about {
     background-color: #ebe9e8;
