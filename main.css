@@ -29,6 +29,7 @@ body a {
 .photo {
     position: relative;
     overflow: hidden;
+    
 }
 
 .photo img {
@@ -39,25 +40,25 @@ body a {
 /*--------------------------menu--------------------------*/
 
 .menu {
+    position: fixed;
+    top: 0;
     margin: 0 0 3em 0;
     padding: 1em 0 1em 0;
     height: 4em;
-}
-
-.menu-scroll {
-    position: fixed;
-    top: 0;
-    right: 0;
     width: 100%;
-    box-shadow: 0 2px 4px -2px gray;
+    box-shadow: 0 2px 4px -2px rgb(214, 213, 213);
     z-index: 400;
     background-color: #fff;
+    transition: top .3s ease-in-out;
 }
 
 .mobileMenu {
-    position: relative;
+    position: fixed;
+    top: 0;
     width: 100%;
-    box-shadow: 0 2px 4px -2px gray;
+    box-shadow: 0 2px 4px -2px rgb(214, 213, 213);
+    background-color: white;
+    z-index: 400;
 }
 
 .mobileMenu ul {
@@ -68,6 +69,7 @@ body a {
     list-style-type: none;
     text-align: left;
     padding: 1em 0 1em 2em;
+    display: block;
 }
 
 .menu ul {
@@ -90,7 +92,6 @@ body a {
     background-color: #28d8d8;
     color: #ffffff;
     padding: 1em 1.4em;
-    position: relative;
     margin-bottom: 1em;
 }
 
@@ -100,6 +101,7 @@ body a {
 
 .menu ul li.dropdownIcon a {
     color: #ffffff;
+    display: block;
 }
 .menu ul li.dropdownIcon a:hover {
     color: #262d3f;
@@ -143,13 +145,10 @@ body a {
 /*------------------------- header --------------------*/
 
 .short-description {
-    margin: 3em 1.5em 5em 1.5em;
+    margin: 8em 1.5em 5em 1.5em;
     line-height: 1.7em;
 }
 
-.short-description-scroll {
-    margin: 8em 1.5em 5em 1.5em;
-}
 
 .name {
     color: #ff423c;
@@ -157,8 +156,6 @@ body a {
     font-size: 2em;
     margin-bottom: 2em;
 }
-
-
 
 /* ------------------------ main -------------------------------*/
 
@@ -170,13 +167,14 @@ body a {
     position: relative;
     width: 100%;
     top: -.5em;
-    padding-bottom: 3em;
 }
 
 .skills {
     width: 90%;
     margin: 0 auto;
 }
+
+/*---------------------- nagłówek sekcji -------------------------*/
 
 .headline {
     margin: 0;
@@ -200,6 +198,8 @@ body a {
     background-color: #ff423c;
     border: 0;
 }
+
+/*------------------------- umiejętności ----------------------*/
 
 .skills img {
     width: 3em;
@@ -307,6 +307,8 @@ body a {
     width: 50%;
 }
 
+/*-----------------------projekty-----------------------------*/
+
 .portfolio {
     background-color: #ebe9e8;
     width: 100%;
@@ -318,16 +320,61 @@ body a {
     margin: 0 auto;
     text-align: center;
     overflow: hidden;
-    
 }
 
-.projects img {
-    display: inline-block;
+.project:after {
+    content: "";
+    display: block;
     width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.8;
+    z-index: 0;
+    position: relative;
+    top: -1.7em;
+    border-radius: 5px;
+}
+
+.project:hover:after {
+    opacity: 0.9;
+}
+
+.project:hover:active {
+    opacity: 0.9;
+}
+
+.project > * {
+    z-index: 10;
+    position: relative;
+}
+
+.project {
+    width: 80vw;
     max-width: 30em;
+    height: 80vw;
+    max-height: 30em;
     text-align: center;
     margin: 0 auto 3em auto;
     border-radius: 5px;
+    background-size: cover;
+}
+
+.project p {
+    padding: 0 1em;
+    margin: 0;
+    width: 100%;
+}
+
+#project1 {
+    background-image: url('img/wr.png');
+}
+
+#project2 {
+    background-image: url('img/przeczytana.png');
+}
+
+#project3 {
+    background-image: url('img/gitHub.png');
 }
 
 .projects img:hover {
@@ -337,6 +384,8 @@ body a {
 .projects img:active {
 
 }
+
+/*----------------------------kontakt------------------------------*/
 
 .contact {
     width: 90%;
@@ -398,7 +447,7 @@ footer {
 
 /*-------------------- media queries ------------------------------------*/
 
-/*--------------------- tablets ----------------------------------------*/
+/*------- tablets ---------*/
 
 @media (min-width:776px) {
    
@@ -417,7 +466,7 @@ footer {
         right: 0;
         width: 30em;
         overflow: hidden;
-        z-index: -20;
+        z-index: 450;
     }
 
     .photo img {
@@ -428,11 +477,11 @@ footer {
 
     .menu {
         border: 0;
-        box-shadow: none;
     }
 
     .menu ul {
         text-align: left;
+        padding-top: 1.2em;
         margin-left: 3em;
     }
 
@@ -445,9 +494,11 @@ footer {
     }
 
     .short-description {
-        margin: 0 0 0 4em;
+        margin: 13em 0 0 4em;
         width: 50%;
+        height: 18.1em;
     }
+
     .short-description p {
     text-align: left;
     width: 50%;
@@ -462,17 +513,17 @@ footer {
         text-align: left;
     }
 
+    /*---------------- o mnie ---------*/
+
     .about {
-        top: 8em;
         padding-bottom: 3em;
     }
 
-    
+    /*------  umiejętności  -----------*/
 
     .skills {
         position: relative;
         margin: 0 auto;
-        top: 8em;
         width: 90%;
         overflow: hidden;
     }
@@ -509,22 +560,32 @@ footer {
         width: 60%;
     }
 
+/*---------- projekty -----------*/
+
     .portfolio {
         position: relative;
-        top: 8em;
+        top: 5em;
     }
 
-    .projects img {
-        width: 25%;
-        padding: 1em;
+    .projects {
         display: inline-block;
     }
+
+    .project {
+        display: inline-block;
+        width: 23vw;
+        height: 23vw;
+        margin: 0 .5em 0 .5em;
+    }
+
+    /*------------kontakt-----------*/
 
     .contact {
         position: relative;
         top: 8em;
     }
 
+    /*-------------stopka------------*/
 
     footer {
         position: relative;
@@ -533,7 +594,7 @@ footer {
     
 }
 
-/*--------------------- desktops ----------------------------------------*/
+/*--------------------- desktops --------------------------*/
 
 @media (min-width:1024px) {
     .photo {
@@ -554,9 +615,8 @@ footer {
     }
 
     .short-description {
-        margin: 0 0 0 6em;
+        padding-left: 2em;
     }
-
 
     #all-skills {
         width: 90%;
@@ -566,8 +626,10 @@ footer {
         width: 40%;
     }
 
-    .projects img {
-        width: 25%;
+    .project {
+        display: inline-block;
+        width: 24vw;
+        height: 24vw;
     }
 
 }
