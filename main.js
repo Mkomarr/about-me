@@ -1,17 +1,26 @@
-/*---------------- scrolllTo, skrypt z gitHub--------------------*/
+/*---------------- scrolllTo--------------------*/
 
 $().ready (function () {
+	let windowWidth = $(window).width();
+
+	$('#mk-home').click (function (event){
+		event.preventDefault();
+		let goTop = $('#mk-about').offset().top-200;
+		$("html, body").animate({
+			scrollTop: goTop
+		}, 500);
+	});
 	
 	$('#about-nav').click (function (event){
-		// event.preventDefault();
-		var goTop = $('#about').offset().top;
+		event.preventDefault();
+		let goTop = $('#about').offset().top;
 		$("html, body").animate({
 			scrollTop: goTop
 		}, 500);
 	});
 	$('#projects-nav').click (function (event){
-		// event.preventDefault();
-		var goTop = $('#projects').offset().top;
+		event.preventDefault();
+		let goTop = $('#projects').offset().top;
 		$("html, body").animate({
 			scrollTop: goTop
 		}, 500);
@@ -19,35 +28,41 @@ $().ready (function () {
 	
 	$('#contact-nav').click (function (event){
 		event.preventDefault();
-		var goTop = $('#contact').offset().top;
+		let goTop = $('#contact').offset().top;
 		$("html, body").animate({
 			scrollTop: goTop
 		}, 500);
+
 	});
 });
 
 /*---------------------- dropdownMenu -------------------------*/
 
 const icon = document.querySelector('.dropdownIcon');
-const menu = document.querySelector('.menu')
+const menu = document.getElementById('top-menu')
 const hideMenu = document.querySelectorAll('.desktopMenu')
 
 icon.addEventListener('click', () => {
-	 if (menu.className === 'menu') {
-		menu.className = 'mobileMenu';
-	 } else if (menu.className === 'mobileMenu'){
-		menu.className = 'menu';
-	 } else {
-		menu.className = 'mobileMenu';
-	 }
+	menu.className = 'mobileMenu';
 });
-//na kiedyś - co zmienić (archit?), żeby działało tylko na wersji mob
 
 /*------- schowaj menu po kliknięciu w inny element niż hamburger menu ----------*/
 
 hideMenu.forEach(singleLi => singleLi.addEventListener('click', () => {
 		menu.className = 'menu';
 }));
+
+/*------------------------schowaj menu przy scrollowaniu---------*/
+let prevScrollpos = window.pageYOffset;
+window.onscroll = () => {
+  let currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    menu.style.top = "0";
+  } else {
+    menu.style.top = "-100px";
+  }
+  prevScrollpos = currentScrollPos;
+}
 
 /*--------------------------licznik dni-----------------------------*/
 
@@ -61,11 +76,3 @@ const countdown = () => {
 }
 window.onload = countdown();
 
-/*---------------------pokaż cień pod menu gdy scroll--------------*/
-
-const shortDescriprion = document.querySelector('.short-description');
-
-window.addEventListener('scroll', () => {
-	menu.className = 'menu menu-scroll'
-	shortDescriprion.className = 'short-description short-description-scroll'
-})
