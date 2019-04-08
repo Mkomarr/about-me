@@ -33,11 +33,13 @@ const menu = document.querySelector('.menu')
 const hideMenu = document.querySelectorAll('.desktopMenu')
 
 icon.addEventListener('click', () => {
-	if (menu.className === 'menu') {
+	 if (menu.className === 'menu') {
 		menu.className = 'mobileMenu';
-	} else {
+	 } else if (menu.className === 'mobileMenu'){
 		menu.className = 'menu';
-	}	
+	 } else {
+		menu.className = 'mobileMenu';
+	 }
 });
 //na kiedyś - co zmienić (archit?), żeby działało tylko na wersji mob
 
@@ -61,6 +63,9 @@ window.onload = countdown();
 
 /*---------------------pokaż cień pod menu gdy scroll--------------*/
 
-const addShadow = () => {
+const shortDescriprion = document.querySelector('.short-description');
 
-}
+window.addEventListener('scroll', () => {
+	menu.className = 'menu menu-scroll'
+	shortDescriprion.className = 'short-description short-description-scroll'
+})
