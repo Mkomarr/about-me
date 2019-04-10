@@ -331,7 +331,7 @@ body a {
     opacity: 0.8;
     z-index: 0;
     position: relative;
-    top: -1.7em;
+    top: 0;
     border-radius: 5px;
 }
 
@@ -345,7 +345,7 @@ body a {
 
 .project > * {
     z-index: 10;
-    position: relative;
+    position: absolute;
 }
 
 .project {
@@ -357,12 +357,24 @@ body a {
     margin: 0 auto 3em auto;
     border-radius: 5px;
     background-size: cover;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .project p {
-    padding: 0 1em;
-    margin: 0;
-    width: 100%;
+    position: absolute;
+    bottom: -4em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    font-size: .9em;
+    text-align: center;
+}
+
+.project span.github {
+
 }
 
 #project1 {
@@ -374,16 +386,9 @@ body a {
 }
 
 #project3 {
-    background-image: url('img/gitHub.png');
+    background-image: url('img/github.png');
 }
 
-.projects img:hover {
-
-}
-
-.projects img:active {
-
-}
 
 /*----------------------------kontakt------------------------------*/
 
