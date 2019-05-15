@@ -278,7 +278,7 @@ body a {
     text-decoration: none;
 }
 
-/*----------------------------kontakt------------------------------*/
+/*---------- kontakt -------------*/
 
 .contact {
     width: 90%;
@@ -289,7 +289,7 @@ body a {
     width: 80%;
     max-width: 30em;
     height: 100%;
-    margin: 0 auto;
+    margin: 4rem auto 0;
 }
 
 .contact-form {
@@ -338,7 +338,7 @@ footer {
     padding: 2em 0 0 0;
 }
 
-/*-------------------- media queries ------------------------------------*/
+/*------ media queries -----------*/
 
 /*------- tablets ---------*/
 
@@ -412,82 +412,41 @@ footer {
         padding-bottom: 3em;
     }
 
-    /*------  umiejętności  -----------*/
+/*------  umiejętności  -----------*/
 
-    .skills {
-        position: relative;
-        margin: 0 auto;
-        width: 90%;
-        overflow: hidden;
+    .skills-logos img {
+        max-width: 6rem;
     }
-    #skill-icon {
-        margin: 0 auto;
-    }
-
-    #skill-icon img {
-        padding: 1.5em 5% 0 0;
-    }
-
-    .skill-table-header {
-        width: 93%;
-        margin: 0 auto;
-        top: 2em;
-    }
-
-    #all-skills {
-        margin: 0 auto 5em auto;
-        width: 90%;
-        padding: 2em 0 1em 0;
-        box-sizing: border-box;
-    }
-
-    .my-skills {
-        width: 40%;
-        margin: 0;
-    }
-    #js {
-        padding-left: 42%;
-    }
-
-    .proggres-bar {
-        width: 60%;
+    .skills-logos img.smaller-img {
+        max-width: 5rem;
     }
 
 /*---------- projekty -----------*/
 
-    .portfolio {
-        position: relative;
-        top: 5em;
-    }
-
     .projects {
-        display: inline-block;
+        display: flex;
+        flex-direction: row;
     }
-
     .project {
-        display: inline-block;
-        width: 23vw;
-        height: 23vw;
-        margin: 0 .5em 0 .5em;
+        max-width: 20rem;
+        padding: 1rem;
     }
 
     /*------------kontakt-----------*/
 
     .contact {
         position: relative;
-        top: 8em;
     }
 
     /*-------------stopka------------*/
 
     footer {
         position: relative;
-        top: 8em;
     }
-    
+
 }
 
-/*--------------------- desktops --------------------------*/
+/*--------- desktops -----------*/
 
 @media (min-width:1024px) {
     .photo {
@@ -519,10 +478,6 @@ footer {
         width: 40%;
     }
 
-    .project {
-        display: inline-block;
-        width: 24vw;
-        height: 24vw;
-    }
+    
 
 }
