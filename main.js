@@ -66,7 +66,7 @@ window.onscroll = () => {
 
 /*--------------------------licznik dni-----------------------------*/
 
-const endTime = new Date('2019-05-06 22:34:00').getTime();
+const endTime = new Date('2019-06-17 22:34:00').getTime();
 const counter = document.querySelector('.countdown');
 const countdown = () => {
 	const nowTime = new Date().getTime();
