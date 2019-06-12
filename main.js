@@ -45,13 +45,13 @@ icon.addEventListener('click', () => {
 	menu.className = 'mobileMenu';
 });
 
-/*------- schowaj menu po kliknięciu w inny element niż hamburger menu ----------*/
+/*------- hide menu when click in other element than hamburger menu ----------*/
 const hideMenu = document.querySelectorAll('.desktopMenu')
 hideMenu.forEach(singleLi => singleLi.addEventListener('click', () => {
 		menu.className = 'menu';
 }));
 
-/*------------schowaj menu przy scrollowaniu---------*/
+/*------------hide menu when scroll---------*/
 let prevScrollpos = window.pageYOffset;
 window.onscroll = () => {
   let currentScrollPos = window.pageYOffset;
@@ -63,7 +63,7 @@ window.onscroll = () => {
   prevScrollpos = currentScrollPos;
 }
 
-/*------------licznik dni---------------*/
+/*------------day counter---------------*/
 
 const endTime = new Date('2019-07-17 22:34:00').getTime();
 const counter = document.querySelector('.countdown');
@@ -71,7 +71,17 @@ const countdown = () => {
 	const nowTime = new Date().getTime();
 	const days = Math.floor((endTime / (1000 * 60 * 60 * 24)) - (nowTime / (1000 * 60 * 60 * 24)));
 	counter.textContent = days;
-	//console.log('działa')
 }
 window.onload = countdown();
+
+/* ----- menu accesibility ------ */
+window.addEventListener('keyup', (e) => {
+	const tabKey = e.keyCode;
+	console.log(tabKey);
+	if (tabKey === 9) {
+		menu.style.top = '0';
+	};
+	});
+
+
 
