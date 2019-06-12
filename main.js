@@ -77,7 +77,6 @@ window.onload = countdown();
 /* ----- menu accesibility ------ */
 window.addEventListener('keyup', (e) => {
 	const tabKey = e.keyCode;
-	console.log(tabKey);
 	if (tabKey === 9) {
 		menu.style.top = '0';
 	};
