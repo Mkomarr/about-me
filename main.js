@@ -10,7 +10,7 @@ $().ready (function () {
 			scrollTop: goTop
 		}, 500);
 	});
-	
+
 	$('#about-nav').click (function (event){
 		event.preventDefault();
 		let goTop = $('#about').offset().top;
@@ -25,7 +25,7 @@ $().ready (function () {
 			scrollTop: goTop
 		}, 500);
 	});
-	
+
 	$('#contact-nav').click (function (event){
 		event.preventDefault();
 		let goTop = $('#contact').offset().top;
@@ -36,23 +36,22 @@ $().ready (function () {
 	});
 });
 
-/*---------------------- dropdownMenu -------------------------*/
+/*-------------- dropdownMenu ------------*/
 
 const icon = document.querySelector('.dropdownIcon');
 const menu = document.getElementById('top-menu')
-const hideMenu = document.querySelectorAll('.desktopMenu')
 
 icon.addEventListener('click', () => {
 	menu.className = 'mobileMenu';
 });
 
 /*------- schowaj menu po kliknięciu w inny element niż hamburger menu ----------*/
-
+const hideMenu = document.querySelectorAll('.desktopMenu')
 hideMenu.forEach(singleLi => singleLi.addEventListener('click', () => {
 		menu.className = 'menu';
 }));
 
-/*------------------------schowaj menu przy scrollowaniu---------*/
+/*------------schowaj menu przy scrollowaniu---------*/
 let prevScrollpos = window.pageYOffset;
 window.onscroll = () => {
   let currentScrollPos = window.pageYOffset;
@@ -64,9 +63,9 @@ window.onscroll = () => {
   prevScrollpos = currentScrollPos;
 }
 
-/*--------------------------licznik dni-----------------------------*/
+/*------------licznik dni---------------*/
 
-const endTime = new Date('2019-06-17 22:34:00').getTime();
+const endTime = new Date('2019-07-17 22:34:00').getTime();
 const counter = document.querySelector('.countdown');
 const countdown = () => {
 	const nowTime = new Date().getTime();
